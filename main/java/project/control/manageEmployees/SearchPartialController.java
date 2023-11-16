@@ -17,7 +17,9 @@ public class SearchPartialController extends ManageEmployeesController{
         for (Employee employee : employeesList) {
             if(employee.getFirstName().toUpperCase().contains(textFieldSearchPartial.getText().toUpperCase())
                     || employee.getLastName().toUpperCase().contains(textFieldSearchPartial.getText().toUpperCase())){
+
                 temporaryList.add(employee);
+
             }
         }
 

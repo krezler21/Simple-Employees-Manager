@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import project.model.Employee;
 import project.model.EmployeesList;
@@ -47,6 +48,14 @@ public class Controller{
 
     public void exitApplication(ActionEvent event) throws IOException{
         javafx.application.Platform.exit();
+    }
+
+    protected void createAlert(String information){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Alert");
+        alert.setHeaderText(information);
+
+        alert.showAndWait();
     }
 
 }

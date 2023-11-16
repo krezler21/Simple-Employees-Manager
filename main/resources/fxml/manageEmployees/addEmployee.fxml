@@ -63,7 +63,7 @@
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Button fx:id="changeConditionButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToChangeCondition" prefHeight="80.0" text="Change condition">
+                <Button fx:id="editEmployeeButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToChangeCondition" prefHeight="80.0" text="Edit employee">
                     <font>
                         <Font size="18.0" />
                     </font>

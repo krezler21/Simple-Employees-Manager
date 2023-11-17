@@ -34,7 +34,7 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="245.0" layoutY="100.0" text="Employee Manager">
+            <Label layoutX="235.0" layoutY="95.0" text="Employees Manager">
                <font>
                   <Font size="48.0" />
                </font>
@@ -44,12 +44,12 @@
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button fx:id="goToManageGroups" layoutX="250.0" layoutY="342.0" mnemonicParsing="false"  prefWidth="400.0" text="Manage groups" onAction="#switchToManageGroups">
+            <Button fx:id="goToManageGroups" layoutX="250.0" layoutY="342.0" mnemonicParsing="false" onAction="#switchToManageGroups" prefWidth="400.0" text="Manage groups">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button fx:id="exitButton" layoutX="250.0" layoutY="422.0" mnemonicParsing="false" prefWidth="400.0" text="Exit" onAction="#exitApplication">
+            <Button fx:id="exitButton" layoutX="250.0" layoutY="422.0" mnemonicParsing="false" onAction="#exitApplication" prefWidth="400.0" text="Exit">
                <font>
                   <Font size="24.0" />
                </font>

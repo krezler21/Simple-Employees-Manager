@@ -9,8 +9,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+import project.model.ClassEmployee;
 import project.model.Employee;
-import project.model.EmployeesList;
+import project.main.GlobalData;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -19,7 +20,9 @@ public class Controller{
     protected Stage stage;
     protected Scene scene;
 
-    protected ObservableList<Employee> employeesList = EmployeesList.employeesList;
+    protected ObservableList<Employee> employeesList = GlobalData.employeesList;
+    protected ObservableList<ClassEmployee> groupsList = GlobalData.groupsList;
+
 
     @FXML
     protected void switchToMain(ActionEvent event) throws IOException {

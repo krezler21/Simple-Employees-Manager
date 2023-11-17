@@ -8,4 +8,5 @@ module project.employeemanager {
     opens project.control to javafx.fxml;
     opens project.control.manageEmployees to javafx.fxml;
     opens project.control.manageGroups to javafx.fxml;
+    opens project.main to javafx.base;
 }

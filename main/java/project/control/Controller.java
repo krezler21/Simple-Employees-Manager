@@ -8,10 +8,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import project.model.ClassEmployee;
 import project.model.Employee;
 import project.main.GlobalData;
+import project.model.EmployeeCondition;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -22,6 +25,24 @@ public class Controller{
 
     protected ObservableList<Employee> employeesList = GlobalData.employeesList;
     protected ObservableList<ClassEmployee> groupsList = GlobalData.groupsList;
+
+    @FXML
+    protected TableView<Employee> employeesTable;
+
+    @FXML
+    protected TableColumn<Employee, String> firstName;
+
+    @FXML
+    protected TableColumn<Employee, String> lastName;
+
+    @FXML
+    protected TableColumn<Employee, Integer> yearOfBirth;
+
+    @FXML
+    protected TableColumn<Employee, Double> salary;
+
+    @FXML
+    protected TableColumn<Employee, EmployeeCondition> condition;
 
 
     @FXML

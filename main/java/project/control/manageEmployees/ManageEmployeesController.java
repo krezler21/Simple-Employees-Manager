@@ -24,25 +24,6 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ManageEmployeesController extends Controller implements Initializable {
-
-    @FXML
-    protected TableView<Employee> employeesTable;
-
-    @FXML
-    private TableColumn<Employee, String> firstName;
-
-    @FXML
-    private TableColumn<Employee, String> lastName;
-
-    @FXML
-    private TableColumn<Employee, Integer> yearOfBirth;
-
-    @FXML
-    private TableColumn<Employee, Double> salary;
-
-    @FXML
-    private TableColumn<Employee, EmployeeCondition> condition;
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         firstName.setCellValueFactory(new PropertyValueFactory<>("FirstName"));

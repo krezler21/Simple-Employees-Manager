@@ -67,7 +67,7 @@
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Button fx:id="sortGroupsButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="80.0" text="Sort groups">
+                <Button fx:id="showDataButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showGroupData" prefHeight="80.0" text="Show data">
                     <font>
                         <Font size="18.0" />
                     </font>
@@ -81,8 +81,8 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <ListView prefHeight="200.0" prefWidth="200.0" />
-            <TableView prefHeight="200.0" prefWidth="733.0">
+            <ListView fx:id="groupsListView" prefHeight="200.0" prefWidth="200.0" />
+            <TableView fx:id="employeesTable" prefHeight="200.0" prefWidth="733.0">
               <columns>
                   <TableColumn fx:id="firstName" maxWidth="-1.0" minWidth="175.0" prefWidth="-1.0" text="First name" />
                   <TableColumn fx:id="lastName" minWidth="175.0" prefWidth="-1.0" text="Last name" />

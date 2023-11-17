@@ -1,5 +1,7 @@
 package project.model;
 
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -110,10 +112,7 @@ public class ClassEmployee {
 
     @Override
     public String toString() {
-        return "ClassEmployee{" +
-                "groupName='" + groupName + '\'' +
-                ", groupOfEmployees=" + groupOfEmployees +
-                '}';
+        return groupName;
     }
 
     @Override

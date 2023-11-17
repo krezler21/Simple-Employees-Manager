@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.control.manageGroups.ManageGroupsController">
     <top>
@@ -57,7 +58,7 @@
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Button fx:id="deleteGroupButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="80.0" text="Delete group">
+                <Button fx:id="deleteGroupButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#removeGroup" prefHeight="80.0" text="Delete group">
                     <font>
                         <Font size="18.0" />
                     </font>
@@ -76,7 +77,33 @@
         </VBox>
     </left>
     <bottom>
-        <HBox prefHeight="109.0" prefWidth="900.0" BorderPane.alignment="CENTER" />
+        <HBox alignment="CENTER" prefHeight="109.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Label text="Group name" />
+                  <Text fx:id="groupNameText" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Label text="Number of employees" />
+                  <Text fx:id="numberOfEmployeesText" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Label text="Max employees" />
+                  <Text fx:id="maxEmployeesText" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Label text="Fill" />
+                  <Text fx:id="fillText" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </VBox>
+         </children></HBox>
     </bottom>
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">

@@ -8,18 +8,31 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import project.control.Controller;
 import project.model.ClassEmployee;
 import project.model.Employee;
 
+import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ManageGroupsController extends Controller implements Initializable {
 
     @FXML
     private ListView<ClassEmployee> groupsListView;
+
+    @FXML
+    private Text groupNameText;
+
+    @FXML
+    private Text numberOfEmployeesText;
+
+    @FXML
+    private Text maxEmployeesText;
+
+    @FXML
+    private Text fillText;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -37,16 +50,29 @@ public class ManageGroupsController extends Controller implements Initializable 
         try{
             ObservableList<ClassEmployee> singleGroup;
             ObservableList<Employee> resultEmployeesList = FXCollections.observableArrayList();
-
             singleGroup = groupsListView.getSelectionModel().getSelectedItems();
-            ArrayList<Employee> temporaryList = singleGroup.get(0).getGroupOfEmployees();
-
-            resultEmployeesList.addAll(temporaryList);
+            resultEmployeesList.addAll(singleGroup.get(0).getGroupOfEmployees());
 
             employeesTable.setItems(resultEmployeesList);
+            groupNameText.setText(singleGroup.get(0).getGroupName());
+            numberOfEmployeesText.setText(String.valueOf(singleGroup.get(0).getGroupOfEmployees().size()));
+            maxEmployeesText.setText(String.valueOf(singleGroup.get(0).getMaxEmployees()));
+            double percent = (double) (singleGroup.get(0).getGroupOfEmployees().size()) / singleGroup.get(0).getMaxEmployees();
+            String fill = String.format("%.2f%%", percent * 100);
+            fillText.setText(fill);
         } catch (Exception e) {
             createAlert("Select a group first");
         }
+    }
+
+    @FXML
+    protected void removeGroup(ActionEvent event) throws IOException {
+        ObservableList<ClassEmployee> allGroups, singleGroup;
+        allGroups = groupsListView.getItems();
+        singleGroup =groupsListView.getSelectionModel().getSelectedItems();
+        singleGroup.forEach(allGroups::remove);
+
+        switchToManageGroups(event);
     }
 
 

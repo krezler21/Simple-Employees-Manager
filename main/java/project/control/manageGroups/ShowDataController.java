@@ -30,6 +30,7 @@ public class ShowDataController extends ManageGroupsController{
             resultEmployeesList.addAll(singleGroup.get(0).getGroupOfEmployees());
 
             employeesTable.setItems(resultEmployeesList);
+
             groupNameText.setText(singleGroup.get(0).getGroupName());
             numberOfEmployeesText.setText(String.valueOf(singleGroup.get(0).getGroupOfEmployees().size()));
             maxEmployeesText.setText(String.valueOf(singleGroup.get(0).getMaxEmployees()));

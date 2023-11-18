@@ -15,11 +15,14 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import project.control.Controller;
+import project.main.GlobalData;
+import project.model.ClassEmployee;
 import project.model.Employee;
 import project.model.EmployeeCondition;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 

@@ -69,6 +69,31 @@ public class ManageGroupsController extends Controller implements Initializable 
         stage.show();
     }
 
+    @FXML
+    protected void switchToEditGroup(ActionEvent event) throws IOException{
+        try{
+            ObservableList<ClassEmployee> singleGroup;
+            singleGroup = groupsListView.getSelectionModel().getSelectedItems();
+            String groupName = singleGroup.get(0).getGroupName();
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/manageGroups/editGroup.fxml"));
+            Parent root = loader.load();
+
+            EditGroupController editGroupController = loader.getController();
+            editGroupController.setTitleLabel(groupName);
+            editGroupController.setSelectedGroup(singleGroup);
+            editGroupController.initializeEditGroup();
+
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e){
+            createAlert("Select a group first");
+        }
+
+    }
+
 
 
 }

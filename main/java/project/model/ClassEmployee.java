@@ -3,6 +3,7 @@ package project.model;
 import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Objects;
 
 public class ClassEmployee {
@@ -30,7 +31,7 @@ public class ClassEmployee {
             if(!groupOfEmployees.contains(employee)){
                 groupOfEmployees.add(employee);
             } else {
-                System.err.println("W grupie już znajduje się pracownik " + employee);
+                throw new InputMismatchException("W grupie już znajduje się pracownik " + employee);
             }
         } else {
             System.err.println("Grupa osiągnęła maksymalny rozmiar.");

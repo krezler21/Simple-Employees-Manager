@@ -62,7 +62,7 @@
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Button fx:id="editEmployeesButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="80.0" text="Edit employees">
+                <Button fx:id="editEmployeesButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToEditGroup" prefHeight="80.0" text="Edit group">
                     <font>
                         <Font size="18.0" />
                     </font>

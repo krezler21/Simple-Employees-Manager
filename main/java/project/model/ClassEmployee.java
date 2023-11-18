@@ -29,7 +29,6 @@ public class ClassEmployee {
         if(!(groupOfEmployees.size()==maxEmployees)){
             if(!groupOfEmployees.contains(employee)){
                 groupOfEmployees.add(employee);
-                System.out.println("Pracownik " + employee + " został dodany.");
             } else {
                 System.err.println("W grupie już znajduje się pracownik " + employee);
             }

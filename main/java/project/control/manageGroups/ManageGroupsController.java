@@ -5,34 +5,28 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import project.control.Controller;
 import project.model.ClassEmployee;
 import project.model.Employee;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ManageGroupsController extends Controller implements Initializable {
 
     @FXML
-    private ListView<ClassEmployee> groupsListView;
-
-    @FXML
-    private Text groupNameText;
-
-    @FXML
-    private Text numberOfEmployeesText;
-
-    @FXML
-    private Text maxEmployeesText;
-
-    @FXML
-    private Text fillText;
+    protected ListView<ClassEmployee> groupsListView;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -45,25 +39,7 @@ public class ManageGroupsController extends Controller implements Initializable 
         groupsListView.setItems(groupsList);
     }
 
-    @FXML
-    protected void showGroupData(ActionEvent event){
-        try{
-            ObservableList<ClassEmployee> singleGroup;
-            ObservableList<Employee> resultEmployeesList = FXCollections.observableArrayList();
-            singleGroup = groupsListView.getSelectionModel().getSelectedItems();
-            resultEmployeesList.addAll(singleGroup.get(0).getGroupOfEmployees());
 
-            employeesTable.setItems(resultEmployeesList);
-            groupNameText.setText(singleGroup.get(0).getGroupName());
-            numberOfEmployeesText.setText(String.valueOf(singleGroup.get(0).getGroupOfEmployees().size()));
-            maxEmployeesText.setText(String.valueOf(singleGroup.get(0).getMaxEmployees()));
-            double percent = (double) (singleGroup.get(0).getGroupOfEmployees().size()) / singleGroup.get(0).getMaxEmployees();
-            String fill = String.format("%.2f%%", percent * 100);
-            fillText.setText(fill);
-        } catch (Exception e) {
-            createAlert("Select a group first");
-        }
-    }
 
     @FXML
     protected void removeGroup(ActionEvent event) throws IOException {
@@ -73,6 +49,24 @@ public class ManageGroupsController extends Controller implements Initializable 
         singleGroup.forEach(allGroups::remove);
 
         switchToManageGroups(event);
+    }
+
+    @FXML
+    protected void switchToAddGroup(ActionEvent event) throws IOException{
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/manageGroups/addGroup.fxml")));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    protected void switchToShowData(ActionEvent event) throws IOException{
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/manageGroups/showData.fxml")));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 

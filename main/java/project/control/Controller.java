@@ -54,7 +54,8 @@ public class Controller{
         stage.show();
     }
 
-    public void switchToManageEmployees(ActionEvent event) throws IOException {
+    @FXML
+    protected void switchToManageEmployees(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/manageEmployees/manageEmployees.fxml")));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -62,7 +63,8 @@ public class Controller{
         stage.show();
     }
 
-    public void switchToManageGroups(ActionEvent event) throws IOException {
+    @FXML
+    protected void switchToManageGroups(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/manageGroups/manageGroups.fxml")));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -70,7 +72,8 @@ public class Controller{
         stage.show();
     }
 
-    public void exitApplication(ActionEvent event) throws IOException{
+    @FXML
+    protected void exitApplication(ActionEvent event) throws IOException{
         javafx.application.Platform.exit();
     }
 
@@ -81,5 +84,15 @@ public class Controller{
 
         alert.showAndWait();
     }
+
+    @FXML
+    protected void aboutAlert(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("About");
+        alert.setHeaderText("App was made by Konrad Rezler");
+
+        alert.showAndWait();
+    }
+
 
 }

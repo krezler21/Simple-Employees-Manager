@@ -18,21 +18,16 @@
     <top>
         <VBox prefWidth="900.0" BorderPane.alignment="CENTER">
             <children>
-                <MenuBar>
+                <MenuBar BorderPane.alignment="CENTER">
                     <menus>
                         <Menu mnemonicParsing="false" text="File">
                             <items>
-                                <MenuItem mnemonicParsing="false" text="Close" />
-                            </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Edit">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Delete" />
+                                <MenuItem mnemonicParsing="false" onAction="#exitApplication" text="Close" />
                             </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="Help">
                             <items>
-                                <MenuItem mnemonicParsing="false" text="About" />
+                                <MenuItem mnemonicParsing="false" onAction="#aboutAlert" text="About" />
                             </items>
                         </Menu>
                     </menus>

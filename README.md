@@ -2,7 +2,7 @@
 This application provides a user-friendly interface for managing employee information within a company.
 
 ## Motivation and Project Description
-I created this application as a coursework project for the "Windowed and Mobile Applications" course. This allowed me to become more familiar with JavaFX and Java itself. The application facilitates the management of employees within a company. From the main menu, users can navigate to two subsequent windows: "Manage Employees" or "Manage Groups."
+I created this application as a coursework project for the "Windowed and Mobile Applications" course, which allowed me to become more familiar with JavaFX and Java itself. The application facilitates the management of employees within a company. From the main menu, users can navigate to two subsequent windows: "Manage Employees" or "Manage Groups."
 
 "Manage Employees" is a list of all employees in the company. It enables the addition, removal, and modification of employee data. Furthermore, there is an option to search the entire list of employees based on a fragment of their first name or last name.
 

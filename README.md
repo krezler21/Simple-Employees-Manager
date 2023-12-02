@@ -11,7 +11,7 @@ I created this application as a coursework project for the "Windowed and Mobile 
 The application includes safeguards against actions such as adding the same employee to a group or entering incorrect data. In case of mishandling the program, an alert should appear, providing information on what steps need to be taken to complete a specific action.
 
 ## Installation
-If you would like to install my project I highly recommend you to do this via IntellIJ. Threre are few steps how to do this:
+If you would like to install my project I highly recommend you to do this via IntellIJ. There are few steps how to do this:
 * Create new "JavaFX" project in IntellIJ
 * Replace your "main" folder with my "main" folder, downloaded from this repository
 * Copy code below into "pom.xml" file
